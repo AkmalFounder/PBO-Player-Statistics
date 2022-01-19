@@ -1,2 +1,7 @@
-# PBO-Player-Statistics
-Soccer player statistics pbo assignment to fulfill one of the requirements for graduation from the pbo course
+How to Run File
+
+- install Laravel firstly
+- copy file github to laravel folder and paste to (controller, model, views) according to each file.
+- run laravel -> php artisan serve
+
+Allready
