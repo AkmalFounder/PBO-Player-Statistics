@@ -38,28 +38,39 @@
               <div class="table-responsive">
                 <table class="table no-margin">
                   <thead>
+                  @php 
+                    $no = 1;
+                  @endphp
+                  @foreach($data as $index => $row)
                   <tr>
-                    <th></th>
+                    <th scope="row">{{ $row->id }}</th>
+                    <!-- <th></th> -->
                     <th>Name</th>
                     <th>Positions</th>
                     <th>Age</th>
+                    <th>update</th>
                   </tr>
                   </thead>
                   <tbody>
+                  
                   <tr>
-                    <td><img src="https://fifastatic.fifaindex.com/FIFA22/players/246430.png"></img></td>
-                    <td><a style="color:black" href="/Datapemain"><span>Dušan Vlahović</span></td></a>
-                    <td><span class="label label-info">ST</span></td>
+                    <td></td>
+                    <!-- <td><img src="https://fifastatic.fifaindex.com/FIFA22/players/246430.png"></img></td> -->
+                    <td><a style="color:black" href="/Datapemain"><span>{{ $row->name }}</span></td></a>
+                    <td><span class="label label-info">{{ $row->position }}</span></td>
                     <td>
-                      <div class="sparkbar">21</div>
+                      <div class="sparkbar">{{ $row->age }}</div>
+                    </td>
+                    <td>
+                    <a href="/ubahdata/{{$row->id}}"  class="btn btn-info">Edit</a>
                     </td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td><img src="https://fifastatic.fifaindex.com/FIFA22/players/223033.png"></img></td>
-                    <td>Jorge Meré</td>
-                    <td><span class="label label-warning">CB</span></td>
+                    <td>{{ $row->name }}</td>
+                    <td><span class="label label-warning">{{ $row->position }}</span></td>
                     <td>
-                      <div class="sparkbar">24</div>
+                      <div class="sparkbar">{{ $row->age }}</div>
                     </td>
                   </tr>
                   <tr>
@@ -85,10 +96,11 @@
                     <td>
                       <div class="sparkbar" data-color="#f39c12" data-height="20">21</div>
                     </td>
-                  </tr>
-                
+                  </tr> -->
+                  @endforeach
                   </tbody>
                 </table>
+                
               </div>
               <!-- /.table-responsive -->
             </div>
